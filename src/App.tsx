@@ -1,6 +1,10 @@
+import HomePage from './pages/HomePage/HomePage';
+
 function App() {
   return (
-    <div className='bg-red-500'>App</div>
+    <div className="w-full">
+      <HomePage />
+    </div>
   );
 }
 
