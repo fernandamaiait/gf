@@ -1,11 +1,16 @@
-//import ErrorStripe from './design-system/ErrorStripe/ErrorStripe';
+//import ScreenStatusHandler from './components/ScreenStatusHandler';
+import ScreenStatusHandler from './components/ScreenStatusHandler';
+import GlobalProvider from './context/GlobalContext';
 import HomePage from './pages/HomePage/HomePage';
+//import HomePage from './pages/HomePage/HomePage';
 
 function App() {
   return (
     <div className="w-full">
-      {/* <ErrorStripe text={errorMessage} onPressCloseButton={} /> */}
-      <HomePage />
+      <GlobalProvider>
+        <ScreenStatusHandler />
+        <HomePage />
+      </GlobalProvider>
     </div>
   );
 }
