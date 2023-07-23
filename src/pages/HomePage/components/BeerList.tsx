@@ -14,7 +14,6 @@ interface Beer {
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function BeerList({ beers, fetchData }: { beers: Array<Beer>; fetchData: any }) {
-  console.log(fetchData);
   return (
     <div className="items-stretch w-full">
       {beers.map(({ id, name, image_url, tagline, description, abv, ibu }) => (
