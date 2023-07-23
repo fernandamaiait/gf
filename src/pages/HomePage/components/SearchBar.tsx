@@ -12,7 +12,7 @@ interface ISearchBarProps {
 
 function SearchBar({ searchTerm, onChange, onSearch }: ISearchBarProps) {
   return (
-    <div className="flex items-end bg-green-200  w-full  mb-4">
+    <div className="flex items-end w-full  mb-4">
       <Input label="Type a beer or style" value={searchTerm} onChange={onChange} />
       <div className="mr-4" />
       <Button onClick={onSearch} text="Search" disabled={searchTerm === ''} />

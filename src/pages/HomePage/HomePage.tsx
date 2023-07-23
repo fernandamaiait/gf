@@ -42,15 +42,16 @@ export default function HomePage() {
         'get',
         `/beers?${selectedSearchOption}=${searchTerm}&page=${pageIndex}&per_page=5`
       );
+      setGlobalState({ ...rest, screenStatus: ScreenStatus.idle });
       setPageIndex((prevState) => prevState + 1);
       console.log(response.data);
       setBeers((prevState) => prevState.concat(response.data));
-      if (beers.length === 0) {
-        if (pageIndex === 1) {
-          setResultMessage('No beers found with this term =(');
+      if (response.data.length === 0) {
+        if (pageIndex > 2) {
+          setResultMessage('No more beers with this term =(');
           return;
         }
-        setResultMessage('No more beers with this term =(');
+        setResultMessage('No beers found with this term =(');
         return;
       }
       setResultMessage('');
@@ -64,8 +65,8 @@ export default function HomePage() {
   };
 
   return (
-    <div className="w-full bg-yellow-50 flex justify-center">
-      <div className="flex flex-col bg-red-50  mt-10 w-full items-center p-4 small:p-10 max-w-[568px]">
+    <div className="w-full flex justify-center">
+      <div className="flex flex-col mt-10 w-full items-center p-4 small:p-10 max-w-[568px]">
         <SearchBar
           searchTerm={searchTerm}
           onChange={(e: { target: { value: SetStateAction<string> } }) =>
@@ -78,11 +79,8 @@ export default function HomePage() {
           selectedValue={selectedSearchOption}
           onClickItem={(value: SetStateAction<string>) => setSelectedSearchOption(value)}
         />
-        {beers.length > 0 ? (
-          <BeerList beers={beers} fetchData={fetchData} />
-        ) : (
-          <div>{resultMessage}</div>
-        )}
+        {beers.length > 0 && <BeerList beers={beers} fetchData={fetchData} />}
+        <div className="m-4">{resultMessage}</div>
       </div>
     </div>
   );

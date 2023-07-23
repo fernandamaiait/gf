@@ -16,7 +16,7 @@ interface Beer {
 function BeerList({ beers, fetchData }: { beers: Array<Beer>; fetchData: any }) {
   console.log(fetchData);
   return (
-    <div className="items-stretch bg-purple-50 w-full">
+    <div className="items-stretch w-full">
       {beers.map(({ id, name, image_url, tagline, description, abv, ibu }) => (
         <div key={id} className="my-4">
           <Card>
