@@ -11,7 +11,7 @@ export default function Button({ text, disabled = false, onClick }: IButtonProps
     <div>
       <button
         className={`${
-          disabled ? ' bg-slate-400' : 'bg-slate-900'
+          disabled ? ' bg-slate-300' : 'bg-slate-900'
         } block py-2 px-4 rounded text-slate-50 w-full`}
         onClick={onClick}
         disabled={disabled}>

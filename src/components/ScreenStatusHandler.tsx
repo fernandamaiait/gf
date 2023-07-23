@@ -1,7 +1,3 @@
-// import { GlobalContext } from '../context/GlobalContext';
-// import ScreenStatus from '../context/ScreenStatus';
-// import { useContext } from 'react';
-// import ErrorStripe from '../design-system/ErrorStripe/ErrorStripe';
 import { useContext } from 'react';
 import { GlobalContext } from '../context/GlobalContext';
 import ScreenStatus from '../context/ScreenStatus';

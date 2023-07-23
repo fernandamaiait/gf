@@ -1,8 +1,7 @@
-import { SetStateAction, useState, useContext, useEffect } from 'react';
+import React, { SetStateAction, useState, useContext, useEffect } from 'react';
 import { api } from '../../api/api';
 import GroupButton from '../../design-system/GroupButton/GroupButton';
 import SearchBar from './components/SearchBar';
-import BeerList from './components/BeerList';
 import { GlobalContext } from '../../context/GlobalContext';
 import ScreenStatus from '../../context/ScreenStatus';
 
@@ -13,6 +12,8 @@ const SEARCH_OPTIONS = [
   { text: 'Malt', value: 'malt' },
   { text: 'Food pairing', value: 'food' }
 ];
+
+const BeerList = React.lazy(() => import('./components/BeerList'));
 
 export default function HomePage() {
   const { setGlobalState, ...rest } = useContext(GlobalContext);
