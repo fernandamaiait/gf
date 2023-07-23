@@ -1,10 +1,12 @@
-'use client';
-
+// import { GlobalContext } from '../context/GlobalContext';
+// import ScreenStatus from '../context/ScreenStatus';
+// import { useContext } from 'react';
+// import ErrorStripe from '../design-system/ErrorStripe/ErrorStripe';
+import { useContext } from 'react';
 import { GlobalContext } from '../context/GlobalContext';
 import ScreenStatus from '../context/ScreenStatus';
-import { useContext } from 'react';
-import ErrorStripe from '../design-system/ErrorStripe/ErrorStripe';
 import CircularProgressIndicator from '../design-system/CircularProgressIndicator/CircularProgressIndicator';
+import ErrorStripe from '../design-system/ErrorStripe/ErrorStripe';
 
 export default function ScreenStatusHandler() {
   const { screenStatus, errorMessage, setGlobalState, ...rest } = useContext(GlobalContext);
