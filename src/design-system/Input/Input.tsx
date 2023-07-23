@@ -10,7 +10,7 @@ export default function Input({
 }: IInputProps) {
   return (
     <div className="flex flex-col w-full">
-      <label htmlFor={id} className="text-sm text-navy-700 font-bold">
+      <label htmlFor={id} className="text-sm text-slate-900 font-bold">
         {label}
       </label>
       <input

@@ -8,11 +8,11 @@ interface IErrorStripeProps {
 
 export default function ErrorStripe({ text, onPressCloseButton }: IErrorStripeProps) {
   return (
-    <div className="bg-error-500 text-surface-0 absolute left-sm right-sm top-sm flex justify-between  rounded-small p-xs text-body1 large:left-1/2 large:translate-x-xs">
-      {text}
-      <button className="ml-xs" onClick={onPressCloseButton}>
-        <X />
+    <div className="bg-red-500 flex-col rounded text-slate-50 absolute p-4 m-4  flex justify-between text-sm w-3/4">
+      <button className="ml-xs self-end" onClick={onPressCloseButton}>
+        <X size={16} />
       </button>
+      <div className="pr-8">{text}</div>
     </div>
   );
 }
