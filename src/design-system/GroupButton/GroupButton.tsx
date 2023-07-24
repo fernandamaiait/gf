@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { MouseEventHandler } from 'react';
 
 interface Item {
@@ -12,7 +13,6 @@ export default function GroupButton({
 }: {
   items: Array<Item>;
   selectedValue: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   onClickItem: any;
 }) {
   return (

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { MouseEventHandler } from 'react';
 import Card from '../../../design-system/Card/Card';
 import Button from '../../../design-system/Button/Button';
 
@@ -12,8 +12,13 @@ interface Beer {
   ibu: string;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function BeerList({ beers, fetchData }: { beers: Array<Beer>; fetchData: any }) {
+function BeerList({
+  beers,
+  fetchData
+}: {
+  beers: Array<Beer>;
+  fetchData: MouseEventHandler<HTMLButtonElement>;
+}) {
   return (
     <div className="items-stretch w-full">
       {beers.map(({ id, name, image_url, tagline, description, abv, ibu }) => (

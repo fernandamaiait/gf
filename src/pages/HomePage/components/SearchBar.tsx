@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from 'react';
+import React, { ChangeEventHandler, MouseEventHandler } from 'react';
 import Button from '../../../design-system/Button/Button';
 import Input from '../../../design-system/Input/Input';
 
 interface ISearchBarProps {
   searchTerm: string;
-  onChange: any;
-  onSearch: any;
+  onChange: ChangeEventHandler<HTMLInputElement>;
+  onSearch: MouseEventHandler<HTMLButtonElement>;
 }
 
 function SearchBar({ searchTerm, onChange, onSearch }: ISearchBarProps) {

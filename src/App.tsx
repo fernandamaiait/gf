@@ -1,8 +1,6 @@
-//import ScreenStatusHandler from './components/ScreenStatusHandler';
 import ScreenStatusHandler from './components/ScreenStatusHandler';
 import GlobalProvider from './context/GlobalContext';
 import HomePage from './pages/HomePage/HomePage';
-//import HomePage from './pages/HomePage/HomePage';
 
 function App() {
   return (

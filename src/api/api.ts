@@ -18,8 +18,8 @@ export async function api(
 
   try {
     return await axios(config);
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  } catch (error: any) {
+    
+  } catch (error: unknown) {
     throw new Error('An error occurred. Please try again later.');
   }
 }
